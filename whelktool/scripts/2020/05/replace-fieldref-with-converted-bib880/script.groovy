@@ -53,7 +53,6 @@ AND collection = 'bib'
     Map bib880Map = asList(instance.remove(BIB880)).withIndex().collectEntries { map, i ->
         ["880-${i < 9 ? '0' : ''}${i + 1}" as String, map]
     }
-
     boolean changed = false
     Closure handle880Ref = { ref, path ->
         def bib880 = bib880Map[ref]
